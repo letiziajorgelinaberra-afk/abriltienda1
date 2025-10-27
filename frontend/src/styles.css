@@ -1,14 +1,8 @@
-:root{
-  --color-primary: #F5AFA6; /* ajustar al color real del logo */
-  --bg: #ffffff;
-  --text: #111;
-}
-body{ font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); margin:0; padding:0;}
-.login-page{ display:flex; align-items:center; justify-content:center; height:100vh;}
-.login-box{ width:320px; padding:24px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-radius:8px; text-align:center;}
-.logo{ width:120px; margin-bottom:8px; }
-.btn-primary{ background:var(--color-primary); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer;}
-.container{ padding:20px;}
-.header{ display:flex; align-items:center; gap:12px;}
-.small-logo{ width:48px; height:48px; border-radius:8px;}
-input, textarea{ width:100%; padding:8px; margin:6px 0; box-sizing:border-box;}
+:root{ --color-primary:#F5AFA6; --bg:#fff; --text:#111 }
+body{ font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); margin:0; padding:0 }
+.login-page{ display:flex; align-items:center; justify-content:center; height:100vh}
+.login-box{ width:360px; padding:24px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-radius:8px; text-align:center}
+.logo{ width:120px; margin-bottom:8px }
+.btn-primary{ background:var(--color-primary); color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer }
+.container{ padding:20px }
+input, textarea{ width:100%; padding:8px; margin:6px 0; box-sizing:border-box }
