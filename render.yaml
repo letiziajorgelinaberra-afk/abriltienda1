@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: abriltienda
+    name: abriltienda1
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
