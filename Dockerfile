@@ -1,20 +1,23 @@
-# Imagen base
-FROM node:18
+FROM node:20-alpine AS backend-build
+WORKDIR /app/backend
+COPY backend/package*.json ./
+RUN npm install --production
+COPY backend/ ./
+RUN npm run build || true
 
-# Crea carpeta de trabajo
-WORKDIR /app
-
-# Copia los archivos del proyecto
-COPY package*.json ./
-
-# Instala dependencias
+FROM node:20-alpine AS frontend-build
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
 RUN npm install
+COPY frontend/ ./
+RUN npm run build
 
-# Copia el resto del código
-COPY . .
-
-# Expone el puerto (Render usa 10000)
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=backend-build /app/backend /app/backend
+RUN mkdir -p /app/backend/public
+COPY --from=frontend-build /app/frontend/build /app/backend/public
+WORKDIR /app/backend
+ENV NODE_ENV=production
 EXPOSE 10000
-
-# Comando para iniciar la app
-CMD ["npm", "start"]
+CMD ["node","src/index.js"]

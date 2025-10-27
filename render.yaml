@@ -1,12 +1,6 @@
-# Exported from Render on 2025-10-24T13:52:25Z
-version: "1"
 services:
-- type: web
-  name: abriltienda
-  runtime: docker
-  repo: https://github.com/letiziajorgelinaberra-afk/abriltienda
-  plan: free
-  region: oregon
-  dockerContext: .
-  dockerfilePath: ./Dockerfile
-  autoDeployTrigger: commit
+  - type: web
+    name: abriltienda
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
