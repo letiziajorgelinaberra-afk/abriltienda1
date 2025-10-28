@@ -1,2 +1,1 @@
-// backend placeholder
-console.log('Backend placeholder');
+console.log('backend placeholder');

@@ -1,2 +1,1 @@
-// seed placeholder
-console.log('Seed placeholder');
+console.log('seed placeholder');

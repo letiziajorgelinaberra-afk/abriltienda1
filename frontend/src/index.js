@@ -1,2 +1,1 @@
-// frontend placeholder
-console.log('Frontend placeholder');
+console.log('frontend placeholder');
